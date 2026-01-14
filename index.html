@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nico Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+    
+        </div>
+        <a href="#contacto" class="btn">Contacto</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Nico Bar</h1>
+            <p>Somos un bar gastronómico contemporáneo diseñado para quienes buscan algo diferente. Aquí, la cocina continua te permite disfrutar desde un desayuno tranquilo hasta una cena memorable, pasando por almuerzos de trabajo o encuentros con amigos.</p>
+
+        </div>
+        <div class="hero-image">
+            <img src="images/image15.png" alt="Imagen principal">
+        </div>
+    </header>
+
+    <!-- INFO -->
+    <section id="info" class="info">
+        <h2>Nuestra propuesta gastronómica</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Desayunos</h3>
+                <p>Comienza tu día con propuestas frescas y deliciosas. Café de especialidad, tostadas artesanales y opciones dulces y saladas para despertar con energía.</p>
+            </div>
+            <div class="card">
+                <h3>Mediodías</h3>
+                <p>Almuerzos ejecutivos y casuales con platos balanceados. Ideal para pausas de trabajo o encuentros informales con sabor y presentación impecable.</p>
+            </div>
+            <div class="card">
+                <h3>Coctelería</h3>
+                <p>Tragos clásicos reinventados y creaciones propias. Nuestra barra es un espacio de experimentación donde cada cóctel cuenta una historia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="gallery">
+        <h2>Galería</h2>
+        <div class="carousel">
+            <button class="prev">‹</button>
+            <div class="carousel-track">
+                <img src="images/image1.png">
+                <img src="images/image2.png">
+                <img src="images/image3.png">
+                <img src="images/image5.png">
+            </div>
+            <button class="next">›</button>
+        </div>
+    </section>
+    <!-- LOCATIONS -->  
+    <section class="locations">
+  <h2>Nuestras ubicaciones</h2>
+  <p class="locations-sub">Estamos presentes en varios lugares para atenderte.</p>
+
+  <div class="locations-grid">
+    <div class="location-card">
+      <h3>Yerba Buena, Tucuman</h3>
+      <p>Av. Juan Domingo Perón 1700  </p>
+      <p>Tel: +54 381 351 9419</p>
+      <a href="https://www.google.com/maps/place/Nico/@-26.8020112,-65.290821,17.25z/data=!4m6!3m5!1s0x942243a3eec63961:0xbbf61ba9ae04044!8m2!3d-26.8017179!4d-65.2910941!16s%2Fg%2F11twzv2szk?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en mapa</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+    <!-- VIDEO -->
+    <section class="video">
+        <h2>Conoce nuestro producto</h2>
+            <div class="video-container">
+                <video autoplay muted loop >
+                    <source src="videos/video1.mp4" type="video/mp4">
+                </video>
+            </div>
+    </section>
+<!-- CTA -->
+    <section id="contacto" class="cta">
+        <h2>¿Listo para empezar?</h2>
+        <p>Escríbenos y llevemos tu proyecto al siguiente nivel.</p>
+        <a href="mailto:contacto@tudominio.com" class="btn primary">Contáctanos</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026NicoBar. Todos los derechos reservados.</p>
+    </footer>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-track img');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let index = 0;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+next.addEventListener('click', () => {
+  index = (index + 1) % slides.length;
+  updateCarousel();
+});
+
+prev.addEventListener('click', () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+</script>
+
+</body>
+</html>
